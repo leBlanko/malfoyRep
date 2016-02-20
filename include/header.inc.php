@@ -26,6 +26,7 @@
         <div class="page-header well">
             <img src="logo.jpg.php" class="img-rounded pull-right">
             <h1>Blan<strong>Komics</strong> <small>Blog de séries DC / Marvel</small></h1>
+
         </div>
         
         <div class="row">

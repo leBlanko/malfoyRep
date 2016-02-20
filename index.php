@@ -3,8 +3,34 @@ include("include/connexion.inc.php");
 include ("include/header.inc.php");
 include ("include/verif_util.inc.php");
 
-//On selectionne tous les articles
-$res=mysql_query("SELECT * FROM articles");
+if(isset($_POST['search']))
+{
+	$search = mysql_real_escape_string($_POST['search']);
+}
+else
+{
+	$search="";
+}
+
+if( $search == null)
+{
+	//On selectionne tous les articles
+	$res=mysql_query("SELECT * FROM articles");
+}
+else
+{
+	//On recupere les articles de la recherche
+	$res=mysql_query('SELECT * FROM articles WHERE contenu LIKE "%'.$search.'%" ');
+
+	$nbLignes = mysql_num_rows($res);
+	if($nbLignes == 0)
+	{
+		//Aucun article a été trouvé
+		echo "<h3>Aucun article correspondant</h3>";
+	}
+
+}
+
 while($data=mysql_fetch_array($res))
 {
 	$id=$data['id'];

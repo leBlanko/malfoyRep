@@ -17,7 +17,21 @@
 				
 				<li><a href="connexion.php">Connexion</a></li>
         <li><a href="inscription.php">Inscription</a></li>
-				<?php } ?>	
+
+				<?php } ?>
+
+        <!-- La barre de recherche -->
+        <form action="index.php" method="post">
+          <div class="row">
+              <div class="input-group">
+                <input type="text" name="search" class="form-control" placeholder="Recherche... ">
+                <span class="input-group-btn">
+                  <INPUT type="submit" class="btn btn-primary" value="Go">
+                </span>
+              </div><!-- /input-group -->
+          </div><!-- /.row -->
+        </form>
+        <!-- End barre de recherche -->	
                 
             </ul>
             
