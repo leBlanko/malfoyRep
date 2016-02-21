@@ -1,1 +1,92 @@
-README
+*** MALFOY TONY LICENCE PRO INTERNET ET MOBILE ***
+
+<—- Projet PHP —->
+
+<- Descriptions des fonctionnalités ->
+
+# Inscription utilisateur
+
+Un utilisateur peut s’inscrire sur le site, il suffit qu’il remplisse le formulaire avec les bonnes conditions, et un compte lui sera crée dans la base de données lui permettant ainsi de pouvoir ajouter, modifier et supprimer des articles.
+
+# Connexion utilisateur
+
+Un utilisateur avec un compte aura besoin de se connecter à celui ci pour réaliser les différentes actions. Il lui suffit simplement d’entrer les bonnes informations de son compte et il sera connecté pour une durée déterminée.
+
+# Ajout article
+
+Lorsqu’il dispose d’un compte, l’utilisateur peut ajouter un article, avec un titre, un contenu et une image représentant celui-ci.
+
+#Modification article
+
+Si l’utilisateur a fait une erreur, il peut directement modifier les informations de l’article plutôt que de supprimer celui-ci et d’en créer un nouveau.
+
+#Supprimer article
+
+Toujours avec un compte, l’utilisateur pourra supprimer un article du blog (et donc de la base de données).
+
+#Moteur de recherche
+
+L’utilisateur pourra rechercher des articles grace à une barre de recherche. Cette premiere version va simplement vérifier dans le contenu de l’article si la chaine de l’utilisateur a entré est présente et afficher les articles correspondants.
+
+#Moteur de recherche Version 2
+
+L’utilisateur va maintenant faire des recherches par mot clef. En effet, cette version va couper la chaine rentrée par l’utilisateur a chaque espace et vérifier dans l’ensemble des articles (contenu mais également titre) si ces termes apparaissent. Par exemple, si l’utilisateur rentre « Barry Queen » , cela va renvoyer l’ensemble des articles ou « Barry » ou « Queen » est présent dans le contenu ou le titre mais pas forcément ceux ou les deux sont présent.
+
+
+<- Descriptions des pages ->
+
+#article.php
+
+Page qui a deux fonctionnalités : ajouter un article au blog ou encore modifier
+celui ci (comporte un formulaire) .
+L’utilisateur peut, si il a un compte sur le site, rédiger un nouvel article, ou modifier le contenu d’un article existant (comme le titre, le contenu ou la vignette).
+
+
+#connexion.php
+
+Cette page contient un formulaire pour permettre aux utilisateurs de se connecter au site
+La page va donc vérifier dans la base de données si les informations remplies correspondent à une ligne dans la table utilisateur.
+Cette page génère également un identifiant de session.
+
+#Dossier DATA
+
+Ce dossier va regrouper l’ensemble des fichiers nécessaires au bon fonctionnement du site comme les images (vignettes des articles).
+
+#deconnexion.php
+
+Page qui sert simplement à supprimer le cookie et à rediriger l’utilisateur vers la page d’accueil.
+
+#Dossier include
+
+Ce dossier regroupe l’ensemble des pages à inclure souvent à d’autres pages, comme le footer, le header, qui sont toujours les mêmes pour chaques pages, mais aussi les pages
+#connexion.inc.php qui connecte l’ensemble à la base de données et #verif_util.inc.php
+qui va vérifier si l’utilisateur est en cours de connexion(cookie).
+
+#index.php
+
+Page principale qui va afficher l’ensemble des articles par défaut mais va également afficher des articles spécifiques en fonction des recherches des utilisateurs via la barre de recherche.
+
+#setcookie.php
+
+Page qui sert simplement à faire un cookie
+
+#supprimer_article.php
+
+Page qui, avec un id en paramètre, va supprimer l’article correspondant dans la base de donnée.
+
+#vignette.jpg.php
+
+Page qui va redimensionner une image upload pour l’ajouter à l’affichage de l’article.
+
+#logo.jpg.php
+
+Même fonctionnalité que #vignette.jpg.php mais ce coup ci pour afficher le logo du site dans le header du site web.
+
+
+
+<——- DeadLine : 23 février à 00h00 ——->
+
+
+
+
+
