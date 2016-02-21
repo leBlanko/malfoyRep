@@ -5,7 +5,9 @@ include ("include/verif_util.inc.php");
 
 if(isset($_POST['search']))
 {
-	$search = mysql_real_escape_string($_POST['search']);
+	$search = mysql_real_escape_string($_POST['search']); //On recupère la variable POST
+	$search = trim($search); //On enleve les espaces avant et après la chaine
+ 	$keyWords = explode (' ',$search); //On split par les espaces pour recuperer l'ensemble des mots clef
 }
 else
 {
@@ -20,7 +22,29 @@ if( $search == null)
 else
 {
 	//On recupere les articles de la recherche
+	//version 1 de la barre de recherche
+	/*
 	$res=mysql_query('SELECT * FROM articles WHERE contenu LIKE "%'.$search.'%" ');
+
+	$nbLignes = mysql_num_rows($res);
+	if($nbLignes == 0)
+	{
+		//Aucun article a été trouvé
+		echo "<h3>Aucun article correspondant</h3>";
+	}
+	*/
+
+	//Version améliorée Recherche
+
+	//On va deja recuperer le premier mot clé et voir si il apparait dans le titre ou le contenu de l'article
+	$sql='SELECT * FROM articles WHERE titre LIKE "%'.$keyWords[0].'%" OR contenu LIKE "%'.$keyWords[0].'%" ';
+	//On parcours maintenant tout le reste du tableau et on l'ajoute a la requete principale
+	for ($i=1;$i<count($keyWords);$i++)
+	{
+      	$sql.='OR titre LIKE "%'.$keyWords[$i].'%" OR contenu LIKE "%'.$keyWords[$i].'%"';
+	}
+	//Requete complete, on peut executer la requete
+	$res=mysql_query($sql);
 
 	$nbLignes = mysql_num_rows($res);
 	if($nbLignes == 0)
