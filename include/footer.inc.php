@@ -3,7 +3,7 @@
           <nav class="span4">
             <h2>Menu</h2>
             
-            <ul>
+            <ul id="menuUL">
                 <li><a href="index.php">Accueil</a></li>
 				
 				<?php
@@ -46,6 +46,24 @@
       </footer>
 
     </div>
+
+    <script>
+      $(document).ready(function()
+      {
+        $('.span4').mouseenter(function()
+        {
+          $('#menuUL').slideDown(100);
+        });
+
+        $('.span4').mouseleave(function()
+        {
+          $('#menuUL').slideUp(100);
+        });
+
+
+      });
+
+    </script>
 
   </body>
 </html>

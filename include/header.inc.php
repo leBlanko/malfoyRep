@@ -5,6 +5,7 @@
     <title>Blog de Tony Malfoy</title>
     <meta name="description" content="Petit blog pour m'initier à PHP">
     <meta name="author" content="Jean-philippe Lannoy">
+    <script src="assets/js/jquery-1.8.2.js"></script>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>

@@ -49,5 +49,9 @@ li a
 {
 	font-family: Bangers;
 }
+#menuUL
+{
+	display: none;
+}
 
 /* Code barre de recherche */
