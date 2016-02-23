@@ -43,6 +43,7 @@ h1 strong
 h2,h3
 {
 	font-family: Bangers;
+	font-size: 40px;
 }
 
 li a
@@ -52,6 +53,12 @@ li a
 #menuUL
 {
 	display: none;
+	font-size: 20px;
+}
+
+.span4 h2
+{
+	font-size: 50px;
 }
 
 /* Code barre de recherche */

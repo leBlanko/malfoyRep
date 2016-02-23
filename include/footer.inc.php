@@ -1,7 +1,7 @@
 </div>
           
           <nav class="span4">
-            <h2>Menu</h2>
+            <h2>Menu ≡</h2>
             
             <ul id="menuUL">
                 <li><a href="index.php">Accueil</a></li>
@@ -32,6 +32,20 @@
           </div><!-- /.row -->
         </form>
         <!-- End barre de recherche -->	
+
+
+         <!-- La barre de newsletter -->
+        <form action="newsletter.php" method="post">
+          <div class="row">
+              <div class="input-group">
+                <input type="text" name="newsletter" class="form-control" placeholder="Newsletter email ">
+                <span class="input-group-btn">
+                  <INPUT type="submit" class="btn btn-primary" value="S'abonner">
+                </span>
+              </div><!-- /input-group -->
+          </div><!-- /.row -->
+        </form>
+        <!-- End barre de newsletter --> 
                 
             </ul>
             
