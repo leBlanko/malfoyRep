@@ -35,16 +35,15 @@
 
 
          <!-- La barre de newsletter -->
-        <form action="newsletter.php" method="post">
-          <div class="row">
-              <div class="input-group">
-                <input type="text" name="newsletter" class="form-control" placeholder="Newsletter email ">
-                <span class="input-group-btn">
-                  <INPUT type="submit" class="btn btn-primary" value="S'abonner">
-                </span>
-              </div><!-- /input-group -->
-          </div><!-- /.row -->
-        </form>
+        <div class="row">
+            <div class="input-group">
+              <LABEL for="newsletterEmail"></LABEL>
+              <input type="text" id="newsletterEmail" name="newsletterEmail" class="form-control" placeholder="Newsletter email ">
+              <span class="input-group-btn">
+                <input type="button" id="newSubmit" class="btn btn-primary" value="S'abonner">
+              </span>
+            </div><!-- /input-group -->
+        </div><!-- /.row -->
         <!-- End barre de newsletter --> 
                 
             </ul>
@@ -61,6 +60,7 @@
 
     </div>
 
+    <!-- Script pour le menu qui apparait et qui disparait -->
     <script>
       $(document).ready(function()
       {
@@ -75,6 +75,27 @@
         });
 
 
+      });
+    </script>
+
+
+    <!-- Script pour l'inscription a la newsletter -->
+    <script type="text/javascript">
+      $("#newSubmit").click(function(e)
+      {
+        $.ajax({
+          type: "POST",
+          url: "newsletter.php",
+          data:
+              {
+                newsletterEmail: $("#newsletterEmail").val()
+              }
+          success: function(response) {
+
+          }
+
+        });
+        $("#newsletterEmail").val('');
       });
 
     </script>
