@@ -8,7 +8,7 @@
 
           <?php
 
-          $res=mysql_query("SELECT * FROM articles");
+          $res=mysql_query("SELECT * FROM articles ORDER BY date DESC LIMIT 5");
 
           while($data=mysql_fetch_array($res))
           {
