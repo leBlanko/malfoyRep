@@ -1,7 +1,7 @@
 </div>
           
           <nav class="span4">
-            <h2>Menu ≡</h2>
+            <h3>Menu ≡</h3>
             
             <ul id="menuUL">
                 <li><a href="index.php">Accueil</a></li>

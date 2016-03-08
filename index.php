@@ -2,6 +2,10 @@
 include("include/connexion.inc.php");
 include ("include/header.inc.php");
 include ("include/verif_util.inc.php");
+include("slider.php");
+?>
+
+<?php
 
 if(isset($_POST['search']))
 {
