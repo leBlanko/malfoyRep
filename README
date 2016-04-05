@@ -91,7 +91,31 @@ Même fonctionnalité que #vignette.jpg.php mais ce coup ci pour afficher le log
 
 <——- DeadLine : 23 février à 00h00 ——->
 
+#.htaccess
+
+Cette page va permettre la réecriture d'URL, dans notre exemple, nous allons faire en sorte que lorsque l'utilisateur tape "accueil", il soit renvoyé sur "index.php"
+
+#Menu déroulant au survol
+
+Cette fonctionnalité va reprendre le menu crée précédemmment. En effet, nous allons faire en sorte que le menu s'affiche lorsqu'on survole celui-ci et disparaisse dans le cas contraire. Ceci est fait dynamiquement grace au JavaScript. Pour rappel, le menu contient différents éléments comme le lien pour se connecter/s'inscrire ; le fait de pouvoir rédiger un article ou encore de pouvoir s'inscrire à la newsletter (voir plus bas).
+
+# Inscription à la newsletter en AJAX
+
+Cette fonctionnalité va permettre à l'utilisateur de pouvoir s'inscrire à la newsletter du blog en informant son email dans un champ. Celui-ci sera ajouté à la base de données. De plus, un message apparaitra suivant les différents cas comme "Inscrit à la newsletter" ou encore "Email déjà inscrit" ou encore "Format email invalide"; tout ceci en ajax.
+
+# Diaporama d'articles avec JQuery Slider
+
+Cette fonctionnalité va permettre d'afficher en haut de la page du blog un Slider représentant les différents articles. Nous avons choisis dans notre cas d'afficher les 5 derniers articles (en prenant en compte la date dans la base de données, celle-ci étant stocké en int, il est simple de les comparer". Le Slider va donc faire défiler les 5 derniers articles ajoutés au blog, en y affichant la photo de l'article ainsi qu'un morceau de son contenu.
+
+# Système de votes
+
+Cette fonctionnalité m'a posé plus de problèmes. A l'heure actuelle, je n'ai pas réussi à régler celui-ci. Le code marche partiellement, je m'explique: l'ajout d'un vote marche dans la base de données mais seulement en passant moi même l'Id de l'article. En effet, j'ai été incapable de récupérer l'Id pour lequel l'utilisateur voulait voter. Lors du clique sur un bouton , chaque article été incrémenté de 1 vote visuellement et forcement seulement 1 en base de donnée (le premier). Si j'avais réussi à récupérer l'Id de cette article, il m'aurait été facile de l'envoyer à la page votes.php et de faire un update suivant seulement l'Id fourni.
 
 
+#votes.php
+
+Cette page va simplement permettre de mettre à jour la base de donnée (plus particulièrement la valeur vote dans la table articles).
+
+<——- DeadLine : 5 avril dans la soirée ——->
 
 
