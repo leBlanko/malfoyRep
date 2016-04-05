@@ -48,7 +48,7 @@ if ($connecte) {
         }
         else
         {
-            $sql = 'INSERT INTO articles VALUES ("","' . $titre . '","' . $contenu . '",UNIX_TIMESTAMP())';
+            $sql = 'INSERT INTO articles VALUES ("","' . $titre . '","' . $contenu . '",UNIX_TIMESTAMP(),0)';
             mysql_query($sql) or die('Erreur SQL !' . $sql . '<br />' . mysql_error());
             //gere l image
             $idArticle   = mysql_insert_id();

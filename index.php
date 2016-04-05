@@ -79,6 +79,16 @@ while($data=mysql_fetch_array($res))
 	//htmlspecialchar pour encoder les differentes chose qui pourrait etre presente en html
 	//nl2br qui remplace les br et fait des paragraphes
 	echo gmdate('d M Y H:i', $data['date']);
+
+	?>
+	<button type='button'>
+  		<i class='fa fa-thumbs-up'></i>
+  			Like
+  			<span id="votes"><?php echo htmlspecialchars($data['votes']); ?></span>
+  		<p id="idArticle" style="visibility: hidden;"><?php echo $id; ?></p>
+	</button>
+
+	<?php
 		
 	if($connecte)
 	{
@@ -92,3 +102,29 @@ while($data=mysql_fetch_array($res))
 	
 include ("include/footer.inc.php");
 ?>
+
+<script>
+	 (function () {
+	    $('button').click(function () {
+	    	
+	    	//window.alert($("#idArticle").text());
+	    	sendToVotes();
+	        $('#votes').html(function (i, val) {
+	            	return val * 1 + 1;
+	        });
+	    });
+	}.call(this));
+
+	  function sendToVotes()
+      {
+        $.ajax({
+          type: "POST",
+          url: "votes.php",
+          data:
+              {
+                nb: $("#votes").text(),
+              },
+        });
+      }
+
+</script>
